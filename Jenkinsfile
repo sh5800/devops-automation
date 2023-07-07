@@ -10,5 +10,12 @@ pipeline{
                 bat 'mvn clean install'
             }
         }
+        stage('Build Docker image'){
+            steps{
+                script{
+                    bat 'docker build -t sh5800/devops-integration .'
+                }
+            }
+        }
     }
 }
